@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Control Service - 화면 공유 (Receiver)</title>
+    <link rel="stylesheet" href="/css/receiverstyle.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+<div class="remote-control-page">
+    <div class="remote-control-container">
+        <p class="video-title">내 화면 (공유 중)</p>
+        <div class="screen-share">
+            <video id="screen-share-video" autoplay playsinline></video>
+        </div>
+        <div class="screen-share-controls">
+            <button id="startShareBtn">
+                <i class="fas fa-desktop"></i> 화면 공유 시작
+            </button>
+            <button id="stopShareBtn" disabled>
+                <i class="fas fa-stop"></i> 공유 중지
+            </button>
+            <button id="screenCropBtn" class="crop-btn" disabled>
+                <i class="fas fa-crop-alt"></i> 영역 선택
+            </button>
+        </div>
+    </div>
+
+</div>
+
+<div class="slider-container" style="display: none;">
+    <label for="slider1">top: <span id="value1">0</span></label>
+    <input type="range" id="slider1" min="0" max="100" value="0" oninput="updateValue(1, this.value)">
+    <label for="slider2">bottom: <span id="value2">0</span></label>
+    <input type="range" id="slider2" min="0" max="100" value="0" oninput="updateValue(2, this.value)">
+    <label for="slider3">left: <span id="value3">0</span></label>
+    <input type="range" id="slider3" min="0" max="100" value="0" oninput="updateValue(3, this.value)">
+    <label for="slider4">right: <span id="value4">0</span></label>
+    <input type="range" id="slider4" min="0" max="100" value="0" oninput="updateValue(4, this.value)">
+    <button id="applyBtn" onclick="applySliderValues()">적용</button>
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/receiver.js"></script>
+</body>
+</html>

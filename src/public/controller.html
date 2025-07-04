@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remote Control Service - 원격 제어 (Controller)</title>
+    <link rel="stylesheet" href="/css/controllerstyle.css">
+</head>
+<body>
+<div class="remote-control-page">
+    <div class="remote-control-container">
+        <p>상대방 화면:</p>
+        <div class="screen-share">
+            <video id="screen-share-video" autoplay playsinline></video>
+        </div>
+    </div>
+</div>
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/controller.js"></script>
+</html>

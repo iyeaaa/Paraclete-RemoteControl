@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화면 공유 서비스 시작</title>
+    <link rel="stylesheet" href="/css/homestyle.css">
+</head>
+<body>
+<div class="container">
+    <h1>화면 공유 서비스</h1>
+    <p>참여할 방 이름을 입력하고 역할을 선택해주세요.</p>
+
+    <div class="input-group">
+        <label for="roomName">방 이름:</label>
+        <input type="text" id="roomName" placeholder="예: my-meeting-room">
+    </div>
+
+    <div class="button-group">
+        <button id="startAsReceiverBtn">화면 공유하기 (Receiver)</button>
+        <button id="startAsControllerBtn">화면 보기 (Controller)</button>
+    </div>
+    <p id="errorMessage" class="error-message"></p>
+</div>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/home.js"></script>
+</body>
+</html>
